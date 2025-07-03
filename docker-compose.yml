@@ -1,0 +1,10 @@
+services:
+  app: # Nome do serviço. Você se referirá a este serviço em outros comandos do Docker Compose.
+    build: # Define como construir a imagem Docker para este serviço.
+      context: . # O contexto de construção é o diretório atual, onde o docker-compose.yml está localizado.
+      dockerfile: Dockerfile # O Dockerfile a ser usado para construir a imagem.
+    container_name: imersao-devops-api # Nome do container a ssr criado
+    ports: # Mapeia portas entre o host e o contêiner.
+      - "8000:8000" # Mapeia a porta 8000 do host para a porta 8000 do contêiner.
+    volumes: # Permite que diretórios no host sejam compartilhados com o contêiner.
+      - .:/app # Mapeia o diretório atual (.) no host para o diretório /app no contêiner.
